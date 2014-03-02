@@ -1,0 +1,37 @@
+<div class="row">
+  <div>
+<h1>Listing charts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th>Author name</th>
+      <th>Published at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @charts.each do |chart| %>
+      <tr>
+        <td><%= chart.name %></td>
+        <td><%= chart.content %></td>
+        <td><%= chart.author_name %></td>
+        <td><%= chart.published_at %></td>
+        <td><%= link_to 'Show', chart %></td>
+        <td><%= link_to 'Edit', edit_chart_path(chart) %></td>
+        <td><%= link_to 'Destroy', chart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Chart', new_chart_path %>
+
+<p></p>
+
+</div>

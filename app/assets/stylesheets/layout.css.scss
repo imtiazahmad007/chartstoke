@@ -1,0 +1,26 @@
+label.right {
+	padding-right:10px
+}
+
+.alert-error { background: red; }
+.alert-notice { background: green; }
+
+.custom-error-alert-box {
+  @include alert(
+    // Adjust the background of the alert
+    //$bg: #cccccc,
+    $warning: true,
+    // Give a border to the alert box
+    $radius: true
+  );
+}
+
+.custom-notice-alert-box {
+  @include alert(
+    // Adjust the background of the alert
+    //$bg: #cccccc,
+    $success: true,
+    // Give a border to the alert box
+    $radius: true
+  );
+}

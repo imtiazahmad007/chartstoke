@@ -1,0 +1,86 @@
+
+<%= form_for(@chart) do |f| %>
+<% if @chart.errors.any? %>
+
+<div class="error">
+  <h2><%= pluralize(@chart.errors.count, "error") %> prohibited this chart from being saved:
+  </h2>
+
+  <ul>
+    <% @chart.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+
+<div class='row collapse'>
+
+  <div class='small-3 columns'>
+    <%= f.label :name, class: 'right inline'%>
+  </div>
+
+  <div class="small-3 columns">
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="small-6 columns">
+    <div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class='row collapse'>
+
+ <div class='small-3 columns'>
+  <%= f.label :author_name, class: 'right inline'%>
+</div>
+
+<div class="small-3 columns">
+  <%= f.text_field :author_name %>
+</div>
+
+
+  <div class="small-6 columns">
+    <div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class='row collapse'>
+
+  <div class='small-3 columns'>
+    <%= f.label :content, class: 'right inline'%>
+  </div>
+
+  <div class="small-3 columns">
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="small-6 columns">
+    <div>
+      <div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class='row collapse'>
+
+  <div class="small-9 small-offset-3"> 
+    <%= f.submit 'Save Chart', class: 'button'%>
+  </div>
+
+</div>
+
+
+
+
+
+<% end %>

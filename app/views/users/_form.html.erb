@@ -1,0 +1,93 @@
+
+<%= form_for(@user) do |f| %>
+<% if @user.errors.any? %>
+
+<div class="row">
+  <div class='small-offset-3 small-5'>
+    <div class="error panel">
+      <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+<div class='row collapse'>
+
+  <div class='small-3 columns'>
+    <%= f.label :name, class: 'right inline'%>
+  </div>
+
+  <div class="small-3 columns">
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="small-6 columns">
+  </div>
+
+</div>
+
+<div class='row collapse'>
+
+ <div class='small-3 columns'>
+  <%= f.label :email, class: 'right inline'%>
+</div>
+
+<div class="small-3 columns">
+  <%= f.text_field :email %>
+</div>
+
+<div class="small-6 columns">
+</div>
+
+</div>
+
+<div class='row collapse'>
+
+  <div class='small-3 columns'>
+    <%= f.label :password, class: 'right inline'%>
+  </div>
+
+  <div class="small-3 columns">
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="small-6 columns">
+  </div>
+
+</div>
+
+<div class='row collapse'>
+
+  <div class='small-3 columns'>
+    <%= f.label :password_confirmation, class: 'right inline'%>
+  </div>
+
+  <div class="small-3 columns">
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="small-6 columns">
+  </div>
+
+</div>
+
+
+<div class='row collapse'>
+
+  <div class="small-9 small-offset-3"> 
+    <%= f.submit 'Save user', class: 'button'%>
+  </div>
+
+</div>
+
+
+
+
+
+<% end %>
