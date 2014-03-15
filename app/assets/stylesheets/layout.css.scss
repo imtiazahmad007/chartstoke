@@ -1,26 +1,33 @@
+@import "foundation_and_overrides";
 label.right {
 	padding-right:10px
 }
 
-.alert-error { background: red; }
-.alert-notice { background: green; }
-
 .custom-error-alert-box {
+  @include alert-base;
   @include alert(
-    // Adjust the background of the alert
-    //$bg: #cccccc,
-    $warning: true,
-    // Give a border to the alert box
-    $radius: true
-  );
+    //Adjust the background of the alert
+    $bg: #C60F13,
+    //Give a border to the alert box
+   $radius: true
+ );      
+ .close { @include alert-close; }
+}
+
+
+.custom-success-alert-box {
+ @include alert-base;
+  @include alert();
+  .close { @include alert-close; }
 }
 
 .custom-notice-alert-box {
-  @include alert(
-    // Adjust the background of the alert
-    //$bg: #cccccc,
-    $success: true,
-    // Give a border to the alert box
-    $radius: true
-  );
+ @include alert-base;
+  @include alert($bg:#79FF79);
+  .close { @include alert-close; }
+}
+
+.bar {
+    height: 18px;
+    background: green;
 }

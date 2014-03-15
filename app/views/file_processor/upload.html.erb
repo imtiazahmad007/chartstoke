@@ -1,0 +1,17 @@
+<div class="row">
+
+	<h1>Upload File</h1>
+
+	<!--<%#= form_tag(import_path, multipart: true) do %>
+ 	<%#=label :file %> </br>
+	<%#=file_filed :file %>
+	<%#= file_field_tag(:file) %>
+	<%#= submit_tag("import", :class => 'button') %>
+	<%#end%> -->
+
+	<%= form_tag({action: :import}, multipart: true) do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag("Upload and Tabulate", :class => 'button', id: 'upload_button') %>
+	<% end %>
+
+</div>

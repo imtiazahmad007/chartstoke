@@ -1,7 +1,15 @@
 Chartstoke::Application.routes.draw do
+  get "/uploader", to: 'uploader#index'
+  get "/filecontent", to: 'file_processor#index'
+  get "file_processor/process", to: 'file_processor#process'
+  get "/fileupload", to: 'file_processor#upload'
+  post "/import", to: 'file_processor#import'
+
   resources :users
+
   root 'charts#index'
   get 'charts/test'
+
   resources :charts
   resources :sessions, only: [:create, :new, :destroy]
 

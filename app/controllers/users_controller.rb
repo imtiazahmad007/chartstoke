@@ -31,8 +31,9 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		redirect_to root_url
-
+		User.destroy(@user)
+		sign_out
+		render "index"
 	end
 
 	def update
@@ -40,12 +41,12 @@ class UsersController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	private
-		def user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation)
-		end
+	def user_params
+		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+	end
 
-		def set_user
-			 @user = User.find(params[:id])
-		end
+	def set_user
+		@user = User.find(params[:id])
+	end
 
 end

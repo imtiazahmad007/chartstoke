@@ -1,0 +1,6 @@
+name,phone,role
+jim,7328743456,supervisor
+Charly,7238765467,Manager
+Mike,7255565467,PayRoll
+jim,7328743456,supervisor
+Charly,7238765467,Manager
